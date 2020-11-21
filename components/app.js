@@ -1,5 +1,6 @@
 class App {
-  constructor(){
+  constructor(gradeTable){
+    this.gradeTable = gradeTable;
     this.handleGetGradesError = this.handleGetGradesError.bind(this);
     this.handleGetGradesSuccess = this.handleGetGradesSuccess.bind(this);
   }
@@ -8,7 +9,7 @@ class App {
     console.log(error);
   }
   handleGetGradesSuccess(grades){
-    console.log(grades);
+    this.gradeTable.updateGrades(grades);
   }
   getGrades(){
     var gradesURL = "https://sgt.lfzprototypes.com/api/grades/";
