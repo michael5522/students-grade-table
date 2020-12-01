@@ -11,6 +11,13 @@ class App {
   }
   handleGetGradesSuccess(grades){
     this.gradeTable.updateGrades(grades);
+
+    var gradeSum = 0;
+    for(var i=0;i<grades.length;i++){
+      gradeSum += grades[i].grade;
+    }
+    var gradeAverage = gradeSum/grades.length;
+    console.log(gradeAverage);
   }
   getGrades(){
     var gradesURL = "https://sgt.lfzprototypes.com/api/grades/";
