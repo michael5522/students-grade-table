@@ -17,7 +17,7 @@ class App {
       gradeSum += grades[i].grade;
     }
     var gradeAverage = gradeSum/grades.length;
-    console.log(gradeAverage);
+    this.pageHeader.updateAverage(gradeAverage);
   }
   getGrades(){
     var gradesURL = "https://sgt.lfzprototypes.com/api/grades/";
