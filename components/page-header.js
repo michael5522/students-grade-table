@@ -4,7 +4,8 @@ class PageHeader{
   }
 
   updateAverage(newAverage){
-    console.log(newAverage);
+    var gradeSearch = this.headerElement.querySelector('.badge-secondary');
+    gradeSearch.textContent = newAverage;
   }
 
 }
