@@ -1,5 +1,6 @@
 class App {
-  constructor(gradeTable){
+  constructor(gradeTable, pageHeader){
+    this.pageHeader = pageHeader;
     this.gradeTable = gradeTable;
     this.handleGetGradesError = this.handleGetGradesError.bind(this);
     this.handleGetGradesSuccess = this.handleGetGradesSuccess.bind(this);
@@ -10,6 +11,13 @@ class App {
   }
   handleGetGradesSuccess(grades){
     this.gradeTable.updateGrades(grades);
+
+    var gradeSum = 0;
+    for(var i=0;i<grades.length;i++){
+      gradeSum += grades[i].grade;
+    }
+    var gradeAverage = gradeSum/grades.length;
+    this.pageHeader.updateAverage(gradeAverage);
   }
   getGrades(){
     var gradesURL = "https://sgt.lfzprototypes.com/api/grades/";
