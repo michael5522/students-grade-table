@@ -19,20 +19,66 @@
     </div>
   </header>
 
-  <table class="table table-striped table-bordered">
-    <thead class="thead-light">
-      <tr>
-        <th scope="col">Student Name</th>
-        <th scope="col">Course</th>
-        <th scope="col">Grade</th>
-      </tr>
-    </thead>
+  <div class="row d-flex justify-content-between">
+    <div class="col-md-8">
+      <table class="table table-striped table-bordered">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">Student Name</th>
+            <th scope="col">Course</th>
+            <th scope="col">Grade</th>
+          </tr>
+        </thead>
 
-    <tbody>
+        <tbody>
 
-    </tbody>
+        </tbody>
 
-  </table>
+      </table>
+    </div>
+
+    <div class="col-md-4">
+      <form>
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <label class="input-group-text"><i class="fas fa-user"></i></label>
+            </div>
+            <input type="text" class="form-control" id="student-name" name="name" placeholder="Student Name">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <label class="input-group-text"><i class="fas fa-th-list"></i></label>
+            </div>
+            <input type="text" class="form-control" id="student-course" name="course" placeholder="Student Course">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <label class="input-group-text"><i class="fas fa-graduation-cap"></i></label>
+            </div>
+            <input type="text" class="form-control" id="student-grade" name="grade" placeholder="Student Grade">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-6"></div>
+          <div class="col-3">
+            <button type="submit" class="btn btn-success">Add</button>
+          </div>
+          <div class="col-3">
+            <button type="reset" class="btn btn-danger">Cancel</button>
+          </div>
+        </div>
+      </form>
+
+
+  </div>
 
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
