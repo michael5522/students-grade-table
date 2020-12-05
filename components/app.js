@@ -22,7 +22,7 @@ class App {
       gradeSum += grades[i].grade;
     }
     var gradeAverage = gradeSum/grades.length;
-    this.pageHeader.updateAverage(gradeAverage);
+    this.pageHeader.updateAverage(gradeAverage.toFixed(0));
   }
 
   getGrades(){
@@ -40,7 +40,25 @@ class App {
     $.ajax(requestPayload)
   }
   createGrade(name,course,grade){
-    console.log(name,course,grade);
+
+    var createURL = "https://sgt.lfzprototypes.com/api/grades/";
+
+    var postPayload = {
+      method: "POST",
+      url: createURL,
+      dataType: "JSON",
+      headers: {
+        "X-Access-Token": "WLyN10XR"
+      },
+      data: {
+        "name": name,
+        "course": course,
+        "grade": grade
+      },
+      success: this.handleCreateGradeSuccess,
+      error: this.handleCreateGradeError
+    }
+    $.ajax(postPayload)
   }
 
   handleCreateGradeError(error){
@@ -54,6 +72,6 @@ class App {
 
   start(){
     this.getGrades();
-    this.gradeForm.onSubmit(this.createGrade)
+    this.gradeForm.onSubmit(this.createGrade);
   }
 }
