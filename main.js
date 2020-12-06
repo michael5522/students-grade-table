@@ -1,5 +1,7 @@
+var p = document.querySelector('p');
+
 var table = document.querySelector('table');
-var gTable = new GradeTable(table);
+var gTable = new GradeTable(table, p);
 
 var headerElement = document.querySelector('header');
 var pageHeader = new PageHeader(headerElement);
