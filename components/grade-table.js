@@ -4,7 +4,6 @@ class GradeTable {
     this.noGradesElement = noGradesElement;
   }
   updateGrades(grades){
-
     var tBody = this.tableElement.querySelector('tbody');
     tBody.innerHTML = "";
     for (var i = 0; i < grades.length; i++) {
@@ -49,7 +48,9 @@ class GradeTable {
     var deleteBtn = document.createElement('button');
     deleteBtn.className = "btn btn-danger";
     deleteBtn.textContent = "DELETE";
-    deleteBtn.addEventListener("click", deleteGrade(data.id));
+    deleteBtn.addEventListener('click', function () {
+      deleteGrade(data.id);
+    });
     deleteD.appendChild(deleteBtn);
     return row;
   }
