@@ -81,7 +81,7 @@ class App {
   }
 
   deleteGrade(id){
-    console.log(id);
+    // console.log(id);
     var deleteURL = `https://sgt.lfzprototypes.com/api/grades/${id}`
     var postPayload = {
       method: "DELETE",

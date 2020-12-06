@@ -11,14 +11,13 @@ class GradeTable {
       tBody.append(studentGrades);
     }
 
-    console.log(grades);
 
     var p = document.querySelector('p');
     if (grades.length) {
-      console.log("there are grades",p);
+      // console.log("there are grades",p);
       p.className = "d-none";
     } else {
-      console.log(p);
+      // console.log(p);
       p.className = "";
     }
   }
